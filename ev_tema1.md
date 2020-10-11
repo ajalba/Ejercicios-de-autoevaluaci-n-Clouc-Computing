@@ -1,4 +1,6 @@
+# Ejercicios de auto evaluación del tema 1
 ## Ejercicio 1
+### Buscar una aplicación de ejemplo, preferiblemente propia, y deducir qué patrón es el que usa. ¿Qué habría que hacer para evolucionar a un patrón tipo microservicios?
 La aplicación elegida ha sido la aplicación creada para la asignatura **Programación Web**, en ella se implementa un gestor de bases de datos, concretamente un gestor de bibliotecas. Su arquitectura es una arquitectura por capas, donde se pueden destacar las siguientes:
 
 -Capa de almacenamiento
@@ -13,3 +15,8 @@ Finalmente, la capa de presentación, creada con *HTML* y *CSS*, recibe las peti
 
 ### Evolución a microservicios
 Para que esta aplicación avance a una arquitectura por microservicios, podría realizarse un microservicio dedicado exclusivamente al almacenamiento y base de datos y otro dedicado exclusivamente a la presentación mediante algún framework y empleando un lenguaje moderno.
+
+## Ejercicio 2
+### En la aplicación que se ha usado como ejemplo en el ejercicio anterior, ¿podría usar diferentes lenguajes? ¿Qué almacenes de datos serían los más convenientes?
+
+En la capa de presentación podría emplearse lenguajes como JavaScript. Dado que la capa lógica se encuentra en realidad prácticamente incrustada dentro de la capa de presentación, sería recomendable emplear un framework como por ejemplo *django* y emplear para la misma *python*. En cuanto al almacenamiento un cambio razonable sería emplear bases de datos *NoSQL* como por ejemplo *MongoDB*.
