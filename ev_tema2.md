@@ -34,32 +34,33 @@ Posteriormente se ejecuta `re-start` y se ejecutan las comprobaciones dadas en e
 ## Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga. A continuación, ejecutarlos desde mocha (u otro módulo de test de alto nivel), usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
 
-Se ha creado el fichero *Apuesta.js* con el siguiente contenido:
-*exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
-                this.usuario = usuario;
-                this.apuesta_resultado = apuesta_resultado;
-                this.cantidad_apuesta = cantidad_apuesta;
-                this.as_string = as_string;
-                this.get_usuario = get_usuario;
-                this.get_resultado = get_resultado;
-                this.get_cantidad = get_cantidad;
-        }
-        function as_string(){
-                return this.usuario + ":" + this.apuesta_resultado + ":" + this.cantidad_apuesta;
-        }
-        function get_usuario(){
-                return this.usuario;
-        }
-        function get_resultado(){
-                return this.apuesta_resultado;
-        }
-        function get_cantidad(){
-                return this.cantidad_apuesta;
-        }*
+Se ha creado el fichero `Apuesta.js` con el siguiente contenido:
+
+`exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
+        this.usuario = usuario;
+        this.apuesta_resultado = apuesta_resultado;
+        this.cantidad_apuesta = cantidad_apuesta;
+        this.as_string = as_string;
+        this.get_usuario = get_usuario;
+        this.get_resultado = get_resultado;
+        this.get_cantidad = get_cantidad;
+}
+function as_string(){
+        return this.usuario + ":" + this.apuesta_resultado + ":" + this.cantidad_apuesta;
+}
+function get_usuario(){
+        return this.usuario;
+}
+function get_resultado(){
+        return this.apuesta_resultado;
+}
+function get_cantidad(){
+        return this.cantidad_apuesta;
+}`
 A continuación, tras instalar mocha se ha creado el fichero `test` dentro de la carpeta homónima, con el siguiente contenido:
+
 `var apuesta = require("./Apuesta.js"),
 assert= require("assert");
-
 var nueva_apuesta = new apuesta.Apuesta('Abel','2-1','200');
 assert(nueva_apuesta, "Creada apuesta");
 assert.strictEqual(nueva_apuesta.as_string(), "Abel:2-1:200","Creado");
