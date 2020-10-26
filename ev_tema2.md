@@ -30,4 +30,74 @@ Posteriormente se ejecuta `re-start` y se ejecutan las comprobaciones dadas en e
 
 ![comprobaciones](./imagenes/Ej3re-start.png)
 
+# Ejercicio 4
+## Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga. A continuación, ejecutarlos desde mocha (u otro módulo de test de alto nivel), usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
+
+
+Se ha creado el fichero *Apuesta.js* con el siguiente contenido:
+
+`exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
+	this.usuario = usuario;
+	this.apuesta_resultado = apuesta_resultado;
+	this.cantidad_apuesta = cantidad_apuesta;
+
+	this.as_string = as_string;
+	this.get_usuario = get_usuario;
+	this.get_resultado = get_resultado;
+	this.get_cantidad = get_cantidad;
+}
+
+function as_string(){
+	return this.usuario + ":" + this.apuesta_resultado + ":" + this.cantidad_apuesta;
+}
+
+function get_usuario(){
+	return this.usuario;
+}
+
+function get_resultado(){
+	return this.apuesta_resultado;
+}
+
+function get_cantidad(){
+	return this.cantidad_apuesta;
+}`
+A continuación, tras instalar mocha se ha creado el fichero `test` dentro de la carpeta homónima, con el siguiente contenido:
+`var apuesta = require("./Apuesta.js"),
+assert= require("assert");
+
+var nueva_apuesta = new apuesta.Apuesta('Abel','2-1','200');
+assert(nueva_apuesta, "Creada apuesta");
+assert.strictEqual(nueva_apuesta.as_string(), "Abel:2-1:200","Creado");
+assert.notStrictEqual(nueva_apuesta.get_usuario(), 'sudo', "User correcto");
+assert.strictEqual(nueva_apuesta.get_cantidad(), "200", "Cantidad tope de apuesta");
+console.log("Todos los tests done");`
+
+Y el fichero describe_test, con el siguiente contenido, donde se ha simulado un error, por ejemplo que el usuario se registre como *sudo*, el contenido del fichero es:
+``var assert = require("assert"),
+      apuesta = require("../Apuesta.js");
+
+describe('Apuesta', function(){          
+        describe('Carga', function(){           
+                it('Debe estar cargada', function(){
+                        assert(apuesta, "Cargado");
+                });      
+        });
+                
+        describe('Crea', function(){            
+                it('Debe crear apuestas correctamente', function(){
+                        var nueva_apuesta = new apuesta.Apuesta('Abel','2-1','200');
+                        assert.strictEqual(nueva_apuesta.as_string(), 'Abel:2-1:200',"Creado");
+                });     
+        });
+
+        describe('Verficar user', function(){
+                it('Tu user no puede ser sudo', function(){
+                        var nueva_apuesta = new apuesta.Apuesta('sudo','2-1', '1000');
+                        assert.notStrictEqual(nueva_apuesta.get_usuario(),'sudo', "User Correcto");
+                });
+        });
+});`
+Donde se obtiene como salida ![salida tests](./imagenes/salidaTests.png) 
+
 
