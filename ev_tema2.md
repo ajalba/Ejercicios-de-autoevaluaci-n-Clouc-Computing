@@ -35,7 +35,7 @@ Posteriormente se ejecuta `re-start` y se ejecutan las comprobaciones dadas en e
 
 
 Se ha creado el fichero *Apuesta.js* con el siguiente contenido:
-`exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
+*exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
                 this.usuario = usuario;
                 this.apuesta_resultado = apuesta_resultado;
                 this.cantidad_apuesta = cantidad_apuesta;
@@ -55,7 +55,7 @@ Se ha creado el fichero *Apuesta.js* con el siguiente contenido:
         }
         function get_cantidad(){
                 return this.cantidad_apuesta;
-        }`
+        }*
 A continuación, tras instalar mocha se ha creado el fichero `test` dentro de la carpeta homónima, con el siguiente contenido:
 `var apuesta = require("./Apuesta.js"),
 assert= require("assert");
