@@ -35,6 +35,7 @@ Posteriormente se ejecuta `re-start` y se ejecutan las comprobaciones dadas en e
 
 
 Se ha creado el fichero *Apuesta.js* con el siguiente contenido:
+
 `
         exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
                 this.usuario = usuario;
