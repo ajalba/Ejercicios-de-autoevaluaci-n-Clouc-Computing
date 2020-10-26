@@ -13,4 +13,4 @@ Para el resto de versiones bastará cambiar en el comando anterior la palabra **
 # Ejercicio 2
 ## Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
 
-Basta con crear una carpeta y ejecutar el comando *npm init* y así obtener toda la estructura de directorios básica necesaria para comenzar un proyecto, entre ellos un fichero **package.json**.
+Basta con crear una carpeta y ejecutar el comando `npm init` y así obtener toda la estructura de directorios básica necesaria para comenzar un proyecto, entre ellos un fichero **package.json**. Se puede observar la creación con los siguiente pasos en ![la siguiente imagen](./imagenes/capturaEj2.png "pasos para crear el json del ejemplo")
