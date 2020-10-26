@@ -100,6 +100,11 @@ describe('Apuesta', function(){
 ```
 
 
-Donde se obtiene como salida ![salida tests](./imagenes/salidaTests.png) 
+Donde se obtiene como salida:
+
+![salida tests](./imagenes/salidaTests.png) 
+
+# Ejercicio 5
+Se ha seguido el tutorial de ![Travis](https://docs.travis-ci.com/user/tutorial/)
 
 
