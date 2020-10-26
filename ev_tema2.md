@@ -57,7 +57,8 @@ function get_cantidad(){
 	return this.cantidad_apuesta;
 }`
 A continuación, tras instalar mocha se ha creado el fichero `test` dentro de la carpeta homónima, con el siguiente contenido:
-`var apuesta = require("./Apuesta.js"),
+`
+var apuesta = require("./Apuesta.js"),
 assert= require("assert");
 
 var nueva_apuesta = new apuesta.Apuesta('Abel','2-1','200');
@@ -68,7 +69,7 @@ assert.strictEqual(nueva_apuesta.get_cantidad(), "200", "Cantidad tope de apuest
 console.log("Todos los tests done");`
 
 Y el fichero describe_test, con el siguiente contenido, donde se ha simulado un error, por ejemplo que el usuario se registre como *sudo*, el contenido del fichero es:
-``var assert = require("assert"),
+`var assert = require("assert"),
       apuesta = require("../Apuesta.js");
 
 describe('Apuesta', function(){          
