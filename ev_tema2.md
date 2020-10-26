@@ -14,3 +14,20 @@ Para el resto de versiones bastará cambiar en el comando anterior la palabra **
 ## Crear una descripción del módulo usando package.json. En caso de que se trate de otro lenguaje, usar el método correspondiente.
 
 Basta con crear una carpeta y ejecutar el comando `npm init` y así obtener toda la estructura de directorios básica necesaria para comenzar un proyecto, entre ellos un fichero **package.json**. Se puede observar la creación con los siguiente pasos en ![la siguiente imagen](./imagenes/capturaEj2.png "pasos para crear el json del ejemplo")
+
+# Ejercicio 3
+## Descargar el repositorio de ejemplo anterior, instalar las herramientas necesarias (principalmente Scala y sbt) y ejecutar el ejemplo desde sbt. Alternativamente, buscar otros marcos para REST en Scala tales como Finatra o Scalatra y probar los ejemplos que se incluyan en el repositorio.
+Empleando Java 8, Scala y SBT
+Se ha instalado sbt desde su página oficial (https://www.scala-sbt.org/download.html?_ga=2.121828747.1077410046.1603361923-1348640796.1603358470). 
+Posteriormente se ha clonado el repositorio y seguidos los pasos de la sección *get started* del mismo.
+`git clone git@github.com:JJ/spray-test.git my-project
+cd my-project
+sbt
+`
+Cuando se ejecuta `test` se obtiene como salida:![salida test](./imagenes/Ej3sbt.png)
+
+Posteriormente se ejecuta `re-start` y se ejecutan las comprobaciones dadas en el repositorio en otra terminal.
+
+![comprobaciones](./imagenes/Ej3re-start.png)
+
+
