@@ -33,10 +33,10 @@ Posteriormente se ejecuta `re-start` y se ejecutan las comprobaciones dadas en e
 # Ejercicio 4
 ## Para la aplicación que se está haciendo, escribir una serie de aserciones y probar que efectivamente no fallan. Añadir tests para una nueva funcionalidad, probar que falla y escribir el código para que no lo haga. A continuación, ejecutarlos desde mocha (u otro módulo de test de alto nivel), usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.
 
+El fichero `Apuesta.js` representa una apuesta a un resultado con una cierta cantidad:
 
-Se ha creado el fichero `Apuesta.js` con el siguiente contenido:
-
-`exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
+```
+exports.Apuesta = function(usuario, apuesta_resultado, cantidad_apuesta){
         this.usuario = usuario;
         this.apuesta_resultado = apuesta_resultado;
         this.cantidad_apuesta = cantidad_apuesta;
@@ -56,20 +56,24 @@ function get_resultado(){
 }
 function get_cantidad(){
         return this.cantidad_apuesta;
-}`
+}
+```
 A continuación, tras instalar mocha se ha creado el fichero `test` dentro de la carpeta homónima, con el siguiente contenido:
 
-`var apuesta = require("./Apuesta.js"),
+```
+var apuesta = require("./Apuesta.js"),
 assert= require("assert");
 var nueva_apuesta = new apuesta.Apuesta('Abel','2-1','200');
 assert(nueva_apuesta, "Creada apuesta");
 assert.strictEqual(nueva_apuesta.as_string(), "Abel:2-1:200","Creado");
 assert.notStrictEqual(nueva_apuesta.get_usuario(), 'sudo', "User correcto");
 assert.strictEqual(nueva_apuesta.get_cantidad(), "200", "Cantidad tope de apuesta");
-console.log("Todos los tests done");`
+console.log("Todos los tests done");
+```
 
 Y el fichero describe_test, con el siguiente contenido, donde se ha simulado un error, por ejemplo que el usuario se registre como *sudo*, el contenido del fichero es:
-`var assert = require("assert"),
+```
+var assert = require("assert"),
       apuesta = require("../Apuesta.js");
 
 describe('Apuesta', function(){          
@@ -92,7 +96,8 @@ describe('Apuesta', function(){
                         assert.notStrictEqual(nueva_apuesta.get_usuario(),'sudo', "User Correcto");
                 });
         });
-});`
+});
+```
 
 
 Donde se obtiene como salida ![salida tests](./imagenes/salidaTests.png) 
